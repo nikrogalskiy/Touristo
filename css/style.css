@@ -2266,6 +2266,7 @@ body.ie ._ibg img {
 }
 
 .menu-footer__title {
+  display: block;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
@@ -3051,10 +3052,37 @@ body.ie ._ibg img {
 }
 
 .special-page__column {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 50%;
-          flex: 0 1 50%;
+  margin: 0px 0px 30px 0px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 50%;
+          flex: 1 0 50%;
   padding: 0px 16px;
+}
+
+.special-page__body-dotts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.special-page__body-dotts .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid #22c3ca;
+  margin: 0px 16px 0px 0px;
+  cursor: pointer;
+  display: none;
+}
+
+.special-page__body-dotts .swiper-pagination-bullet-active {
+  background-color: #22c3ca;
 }
 
 .special-page__item {
@@ -3141,6 +3169,10 @@ body.ie ._ibg img {
   color: #fff;
   font-size: 21px;
   line-height: 48px;
+}
+
+.reviews .more__item.swiper-button-disabled {
+  opacity: 0.3;
 }
 
 .reviews__dotts {
@@ -3453,6 +3485,17 @@ body.ie ._ibg img {
   .subscription-page__form_email {
     width: 50%;
   }
+
+  .special-page__body .swiper-wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .special-page__column {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
 }
 
 @media (max-width: 920px) {
@@ -3690,20 +3733,27 @@ body.ie ._ibg img {
   .subscription-page__form_btn {
     height: 56px;
   }
-
-  .special-page__body {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-
-  .special-page__column {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 100%;
-            flex: 1 1 100%;
-  }
 }
 
 @media (max-width: 600px) {
+  .special-page__body .swiper-wrapper {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+
+  .special-page__body-dotts .swiper-pagination-bullet {
+    display: block;
+  }
+
+  .special-page__item {
+    min-height: 220px;
+  }
+
+  .item-page-special__content {
+    max-width: 100%;
+    padding: 15px;
+  }
+
   .reviews__item {
     padding: 32px 10px 32px 0px;
   }

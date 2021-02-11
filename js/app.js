@@ -33,7 +33,10 @@ var mixerProductsSaleBody = mixitup('.products-sale__body', {
 	}
 });
 
-//добавление сласса при нужной ширине
+
+
+// начало добавление сласса при нужной ширине
+
 // function classNameCheck() {
 // 	const div = document.querySelector('.slider__wrapper');
 // 	if (!div) return;
@@ -48,6 +51,9 @@ var mixerProductsSaleBody = mixitup('.products-sale__body', {
 // ['load', 'resize', 'orientationchange'].forEach(event => {
 // 	window.addEventListener(event, classNameCheck);
 // })
+
+// конец добавление сласса при нужной ширине
+
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
@@ -1526,7 +1532,7 @@ let sliderReviewsSlider = new Swiper('.reviews__slider', {
 	*/
 	observer: true,
 	observeParents: true,
-	slidesPerView: 3,
+	slidesPerView: 1,
 	spaceBetween: 0,
 	autoHeight: true,
 	speed: 800,
@@ -1548,7 +1554,6 @@ let sliderReviewsSlider = new Swiper('.reviews__slider', {
 
 	breakpoints: {
 		320: {
-			slidesPerView: 1,
 			spaceBetween: 0,
 		},
 		600: {
@@ -1570,6 +1575,55 @@ let sliderReviewsSlider = new Swiper('.reviews__slider', {
 	//	el: '.swiper-scrollbar',
 	//},
 });
+
+//========================================================================================================================================================
+
+
+//========================================================================================================================================================
+
+
+//Start запуск слайдера на заданной ширине
+
+const sliderSpecialPage = document.querySelector('.special-page__body');
+
+let sliderSpecialPageBody;
+
+function mobileSlider() {
+	if (window.innerWidth <= 600 && sliderSpecialPage.dataset.mobile == 'false') {
+		sliderSpecialPageBody = new Swiper(sliderSpecialPage, {
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			autoHeight: true,
+			speed: 800,
+			loop: true,
+			pagination: {
+				el: '.special-page__body-dotts',
+				clickable: true,
+			},
+		});
+
+		sliderSpecialPage.dataset.mobile = 'true';
+	}
+
+	if (window.innerWidth > 600) {
+		sliderSpecialPage.dataset.mobile = 'false';
+		if (sliderSpecialPage.classList.contains('swiper-container-initialized')) {
+			sliderSpecialPageBody.destroy();
+		}
+	}
+}
+
+mobileSlider()
+
+window.addEventListener('resize', () => {
+	mobileSlider();
+});
+
+//End запуск слайдера на заданной ширине
+
+//========================================================================================================================================================
 
 
 
