@@ -1553,14 +1553,13 @@ let sliderReviewsSlider = new Swiper('.reviews__slider', {
 	},
 
 	breakpoints: {
-		320: {
-			spaceBetween: 0,
-		},
-		600: {
+		720: {
 			slidesPerView: 2,
+			spaceBetween: 20,
 		},
-		992: {
+		920: {
 			slidesPerView: 3,
+			spaceBetween: 30,
 		},
 
 	},

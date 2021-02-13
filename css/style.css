@@ -2294,6 +2294,10 @@ body.ie ._ibg img {
           flex: 1 1 auto;
 }
 
+.where-going {
+  margin-bottom: 80px;
+}
+
 .where-going__fullscreen {
   min-height: 100vh;
 }
@@ -3313,6 +3317,10 @@ body.ie ._ibg img {
     font-size: calc(24px + 8 * ((100vw - 320px) / 992));
   }
 
+  .where-going {
+    margin-bottom: calc(30px + 50 * ((100vw - 320px) / 992));
+  }
+
   .where-going__body {
     padding-top: calc(90px + 100 * ((100vw - 320px) / 992));
   }
@@ -3778,6 +3786,10 @@ body.ie ._ibg img {
 @media (max-width: 479.98px) {
   .contakts-header {
     margin: 0px 0px 0px 0px;
+  }
+
+  .popup_callback .popup__body {
+    padding: 30px 10px;
   }
 
   .menu-footer__list {
