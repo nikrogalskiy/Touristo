@@ -2265,6 +2265,18 @@ body.ie ._ibg img {
   line-height: 40px;
 }
 
+.menu-footer__list {
+  margin: 0px 0px 20px 0px;
+}
+
+.menu-footer__list li {
+  margin: 0px 0px 20px 0px;
+}
+
+.menu-footer__list li:first-child {
+  margin: 0px 0px 16px 0px;
+}
+
 .menu-footer__title {
   display: block;
   font-weight: 500;
@@ -2274,14 +2286,6 @@ body.ie ._ibg img {
   text-transform: uppercase;
   color: #22c3ca;
   margin: 0px 0px 16px 0px;
-}
-
-.menu-footer__list {
-  margin: 0px 0px 20px 0px;
-}
-
-.menu-footer__list li {
-  margin: 0px 0px 20px 0px;
 }
 
 .menu-footer__link {
